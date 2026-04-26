@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediRAG - Milestones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
+</head>
+<body data-page="milestones">
+  <div id="site-header"></div>
+
+  <main class="page-main">
+    <section class="container page-hero">
+      <h1>Assessment Timeline and Milestones</h1>
+      <p>
+        Review key assessment checkpoints, scheduled review dates, and marks distribution used to track MediRAG progress across academic evaluation stages.
+      </p>
+    </section>
+
+    <section class="container milestones-wrap" aria-labelledby="assessment-selector-label">
+      <div class="milestones-control">
+        <label id="assessment-selector-label" class="milestones-label" for="assessment-select">
+          Select Assessment
+        </label>
+
+        <select id="assessment-select" class="milestones-select" name="assessment">
+          <option value="proposalPresentation">Proposal Presentation</option>
+          <option value="proposalReport">Proposal Report</option>
+          <option value="pp1">Progress Presentation 1 (50%)</option>
+          <option value="pp2">Progress Presentation 2 (90%)</option>
+          <option value="finalReport">Final Report</option>
+          <option value="finalReportGroup">Final Report (Group)</option>
+          <option value="finalPresentation">Final Presentation</option>
+          <option value="viva">Viva</option>
+          <option value="website">Project Website</option>
+          <option value="researchPaper">Research Paper</option>
+          <option value="checklist">Check Lists</option>
+          <option value="logbook">Logbook</option>
+        </select>
+      </div>
+
+     <article class="milestone-card" aria-live="polite">
+
+        <div class="milestone-card-top">
+          <h2 id="milestone-title">Proposal Presentation</h2>
+          <span id="milestone-status" class="status-badge completed">Completed</span>
+        </div>
+
+        <p id="milestone-description" class="milestone-description">
+          Initial presentation covering research motivation, problem definition, and the proposed MediRAG architecture.
+        </p>
+
+        <dl class="milestone-meta">
+          <div class="meta-item">
+            <dt>Date</dt>
+            <dd id="milestone-date">Octomber 2025</dd>
+          </div>
+
+          <div class="meta-item">
+            <dt>Marks Allocated</dt>
+            <dd id="milestone-marks">6%</dd>
+          </div>
+        </dl>
+
+      </article>
+
+      <div class="timeline" aria-label="Assessment timeline">
+
+        <div class="timeline-step active">Proposal Phase</div>
+        <div class="timeline-line"></div>
+
+        <div class="timeline-step">Progress 1</div>
+        <div class="timeline-line"></div>
+
+        <div class="timeline-step">Progress 2</div>
+        <div class="timeline-line"></div>
+
+        <div class="timeline-step">Final Evaluation</div>
+
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script>
+   const milestoneData = {
+  proposalPresentation: {
+    title: "Proposal Presentation",
+    description:
+      "Initial presentation covering research motivation, problem definition, and proposed MediRAG architecture.",
+    date: "Octomber 2025",
+    marks: "6%",
+    status: "Completed",
+    statusClass: "completed",
+    stepIndex: 0,
+  },
+  proposalReport: {
+    title: "Proposal Report",
+    description:
+      "Detailed documentation of literature review, research gap, methodology, and proposed system design.",
+    date: "October 2025",
+    marks: "6%",
+    status: "Completed",
+    statusClass: "completed",
+    stepIndex: 1,
+  },
+  pp1: {
+    title: "Progress Presentation 1 (50%)",
+    description:
+      "Evaluation of initial implementation, including domain routing, retrieval setup, and early pipeline development.",
+    date: "January 2026",
+    marks: "15%",
+    status: "Completed",
+    statusClass: "completed",
+    stepIndex: 2,
+  },
+  pp2: {
+    title: "Progress Presentation 2 (90%)",
+    description:
+      "Assessment of system integration, evaluation results, and improvements in evidence-grounded generation.",
+    date: "March 2026",
+    marks: "18%",
+    status: "Pending",
+    statusClass: "completed",
+    stepIndex: 3,
+  },
+  finalReport: {
+    title: "Final Report",
+    description:
+      "Comprehensive individual report detailing system design, implementation, evaluation, and research contributions.",
+    date: "May 2026",
+    marks: "15%",
+    status: "Pending",
+    statusClass: "pending",
+    stepIndex: 4,
+  },
+  finalReportGroup: {
+    title: "Final Report (Group)",
+    description:
+      "Consolidated group report summarizing overall system architecture, integration, and collaborative outcomes.",
+    date: " May 2026",
+    marks: "4%",
+    status: "Pending",
+    statusClass: "pending",
+    stepIndex: 5,
+  },
+  finalPresentation: {
+    title: "Final Presentation",
+    description:
+      "Final system demonstration showcasing functionality, performance, and research contributions.",
+    date: "May 2026",
+    marks: "10%",
+    status: "Pending",
+    statusClass: "pending",
+    stepIndex: 6,
+  },
+  viva: {
+    title: "Viva",
+    description:
+      "Oral examination assessing individual understanding, technical knowledge, and contribution to the project.",
+    date: " May 2026",
+    marks: "10%",
+    status: "Pending",
+    statusClass: "pending",
+    stepIndex: 7,
+  },
+  website: {
+    title: "Project Website",
+    description:
+      "Development of a web platform to present the research, system architecture, and project outcomes.",
+    date: "Aprial 2026",
+    marks: "2%",
+    status: "Pending",
+    statusClass: "pending",
+    stepIndex: 8,
+  },
+  researchPaper: {
+    title: "Research Paper",
+    description:
+      "Preparation and submission of an academic paper based on the MediRAG research findings.",
+    date: "May 2026",
+    marks: "10%",
+    status: "Pending",
+    statusClass: "pending",
+    stepIndex: 9,
+  },
+  checklist: {
+    title: "Check Lists",
+    description:
+      "Completion of required project checklists ensuring compliance with academic guidelines.",
+    date: "May 2026",
+    marks: "2%",
+    status: "Pending",
+    statusClass: "pending",
+    stepIndex: 10,
+  },
+  logbook: {
+    title: "Logbook",
+    description:
+      "Maintaining a detailed record of project progress, activities, and development milestones.",
+    date: "Ongoing",
+    marks: "2%",
+    status: "Pending",
+    statusClass: "pending",
+    stepIndex: 11,
+  },
+};
+
+    const selectElement = document.getElementById("assessment-select");
+    const titleElement = document.getElementById("milestone-title");
+    const descriptionElement = document.getElementById("milestone-description");
+    const dateElement = document.getElementById("milestone-date");
+    const marksElement = document.getElementById("milestone-marks");
+    const statusElement = document.getElementById("milestone-status");
+    const timelineSteps = Array.from(document.querySelectorAll(".timeline-step"));
+
+    function updateMilestoneView(selectedKey) {
+      const item = milestoneData[selectedKey];
+      if (!item) return;
+
+      titleElement.textContent = item.title;
+      descriptionElement.textContent = item.description;
+      dateElement.textContent = item.date;
+      marksElement.textContent = item.marks;
+      statusElement.textContent = item.status;
+      statusElement.classList.remove("completed", "pending");
+      statusElement.classList.add(item.statusClass);
+
+      timelineSteps.forEach((step, index) => {
+        step.classList.toggle("active", index <= item.stepIndex);
+      });
+    }
+
+    selectElement.addEventListener("change", (event) => {
+      updateMilestoneView(event.target.value);
+    });
+  </script>
+  <script src="assets/js/layout.js" defer></script>
+</body>
+</html>

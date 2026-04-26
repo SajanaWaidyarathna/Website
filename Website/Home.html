@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediRAG - Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
+</head>
+<body data-page="home">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="tag">Medical AI Research</div>
+          <h1 class="hero-title">
+            Reliable Medical Answers.<br>
+            <span class="accent">Powered by MediRAG.</span>
+          </h1>
+          <p class="hero-subtitle">
+            A hallucination-reduced AI system for medical question answering.
+          </p>
+          <p class="hero-description">
+            MediRAG improves clinical accuracy by routing queries through domain-specialized retrieval pipelines, grounding responses in verified evidence rather than generative inference alone.
+          </p>
+
+          <div class="hero-actions">
+            <a href="domain.html" class="btn btn-primary">Explore Research <span>→</span></a>
+            <a href="documents.html" class="btn btn-outline">View Documents <span>→</span></a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-visual-frame">
+            <div class="hero-visual-head">
+              <div>
+                <div class="hero-visual-kicker">System Snapshot</div>
+                <h2>Domain-Routed Medical AI</h2>
+              </div>
+              <div class="hero-visual-pill">4 Pipelines</div>
+            </div>
+
+            <figure class="hero-diagram">
+              <img src="assets/images/medirag-overall-architecture.png" alt="MediRAG architecture diagram" loading="eager" decoding="async" />
+            </figure>
+
+            <div class="hero-visual-footer">
+              <div class="hero-mini-stat">
+                <span>4</span>
+                <strong>Specialized Pipelines</strong>
+              </div>
+              <div class="hero-mini-stat">
+                <span>RAG</span>
+                <strong>Retrieval-Augmented Generation</strong>
+              </div>
+              <div class="hero-mini-stat">
+                <span>Low</span>
+                <strong>Hallucination Rate</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="overview-sections">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Research Overview</div>
+          <h2>Core Research Sections</h2>
+          <p>
+            Structured content blocks for academic panel presentation with concise narrative flow and clear section hierarchy.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">SECTION 01</div>
+            <h3>Problem Statement</h3>
+            <p>
+              Artificial Intelligence has become a common tool for quickly finding answers, including in the medical domain. Medical students and clinical professionals increasingly rely on AI systems to understand concepts and explore medical knowledge.
+            </p>
+            <p>
+              However, these systems have a critical limitation: they can generate incorrect information while presenting it confidently, a problem known as hallucination.
+            </p>
+            <p>In medicine, even small inaccuracies can lead to:</p>
+            <ul>
+              <li>Misunderstanding of critical concepts</li>
+              <li>Incorrect learning for students</li>
+              <li>Misinterpretation of clinical knowledge</li>
+            </ul>
+            <p>
+              Since AI usage cannot be avoided, the central research question is: How can AI answers be made more reliable and safe in medical contexts?
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">SECTION 02</div>
+            <h3>Proposed Solution</h3>
+            <p>
+              MediRAG addresses this challenge by designing a medical question-answering system that prioritizes accuracy and reliability at every stage of the pipeline.
+            </p>
+            <p>The solution is designed to:</p>
+            <ul>
+              <li>Reduce hallucinations</li>
+              <li>Ground responses in reliable medical knowledge</li>
+              <li>Improve overall answer quality</li>
+            </ul>
+            <p>
+              The architecture uses four specialized pipelines for distinct medical domains, including neurosciences, cardiovascular medicine, internal medicine, and mental health with primary care. Each pipeline processes questions independently to improve domain-specific accuracy.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">SECTION 03</div>
+            <h3>Key Features</h3>
+            <ul>
+              <li>Hallucination reduction mechanisms</li>
+              <li>Domain-specific processing pipelines</li>
+              <li>Improved retrieval and context preparation</li>
+              <li>Structured answer generation</li>
+              <li>Reliable medical knowledge support</li>
+            </ul>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">SECTION 04</div>
+            <h3>System Overview</h3>
+            <p>
+              MediRAG routes each medical query into a domain-specialized pipeline and applies focused hallucination-reduction logic before response generation.
+            </p>
+
+            <div class="arch-demo" id="arch-demo-live">
+              <div class="arch-headline">
+                <h4>How MediRAG Routes Medical Queries</h4>
+                <p>Each domain activates a dedicated pipeline with a domain-specific strategy for evidence-grounded answering.</p>
+              </div>
+
+              <ul class="arch-domain-cards" id="arch-domain-cards" aria-label="Medical domains">
+                <li>
+                  <button class="arch-domain-card is-active" data-domain="neuro" type="button">
+                    <span class="arch-domain-name">Neurosciences</span>
+                    <span class="arch-domain-query">Sample:What factors are associated with the management of intracranial hemorrhage after thrombolysis?</span>
+                  </button>
+                </li>
+                <li>
+                  <button class="arch-domain-card" data-domain="cardio" type="button">
+                    <span class="arch-domain-name">Cardiovascular Medicine</span>
+                    <span class="arch-domain-query">Sample: How should stage-1 hypertension be managed?</span>
+                  </button>
+                </li>
+                <li>
+                  <button class="arch-domain-card" data-domain="internal" type="button">
+                    <span class="arch-domain-name">Internal Medicine</span>
+                    <span class="arch-domain-query">Sample: What is first-line therapy for type 2 diabetes?</span>
+                  </button>
+                </li>
+                <li>
+                  <button class="arch-domain-card" data-domain="primary" type="button">
+                    <span class="arch-domain-name">Primary Care &amp; Mental Health</span>
+                    <span class="arch-domain-query">Sample: What are the main symptoms of depression?</span>
+                  </button>
+                </li>
+              </ul>
+
+              <div class="arch-pipeline-track" id="arch-pipeline-track" aria-label="Common pipeline flow">
+                <div class="arch-track-line" aria-hidden="true"></div>
+                <span class="arch-track-dot" aria-hidden="true"></span>
+                <ol class="arch-track-steps">
+                  <li class="arch-track-step">
+                    <span class="arch-step-index">1</span>
+                    <h6>Domain Selection</h6>
+                    <p id="arch-flow-domain">Neurosciences</p>
+                  </li>
+                  <li class="arch-track-step">
+                    <span class="arch-step-index">2</span>
+                    <h6>User Query</h6>
+                    <p id="arch-flow-query">What factors are associated with the management of intracranial hemorrhage after thrombolysis?</p>
+                  </li>
+                  <li class="arch-track-step arch-track-step-focus" id="arch-active-step">
+                    <span class="arch-step-index">3</span>
+                    <h6>Active Pipeline</h6>
+                    <p id="arch-flow-pipeline-title">Neurosciences Pipeline</p>
+                  </li>
+                  <li class="arch-track-step">
+                    <span class="arch-step-index">4</span>
+                    <h6>Answer</h6>
+                    <p>Response generation</p>
+                  </li>
+                </ol>
+              </div>
+
+              <section class="arch-backend" aria-label="Backend specialized pipelines">
+                <h5>Backend Specialized Pipelines</h5>
+                <div class="arch-pipeline-grid" id="arch-pipeline-grid">
+                  <article class="arch-pipeline is-active" data-domain="neuro">
+                    <h4>Neurosciences Pipeline</h4>
+                    <p>Speciality: Chunk-level scoring.</p>
+                  </article>
+                  <article class="arch-pipeline" data-domain="cardio">
+                    <h4>Cardiovascular Medicine Pipeline</h4>
+                    <p>Speciality: Domain-aware hybrid retrieval for cardiology question answering.</p>
+                  </article>
+                  <article class="arch-pipeline" data-domain="internal">
+                    <h4>Internal Medicine Pipeline</h4>
+                    <p>Speciality: Answer generation with entity-aware prioritization and multi-model verification.</p>
+                  </article>
+                  <article class="arch-pipeline" data-domain="primary">
+                    <h4>Primary Care &amp; Mental Health Pipeline</h4>
+                    <p>Speciality:Evidence-aware adaptive generation control.</p>
+                  </article>
+                </div>
+              </section>
+
+              <section class="arch-strategy" aria-live="polite">
+                <h5>Pipeline Strategy</h5>
+                <div class="arch-strategy-grid">
+                  <article class="arch-strategy-item">
+                    <h6 class="arch-strategy-label">Pipeline</h6>
+                    <p class="arch-strategy-value" id="arch-strategy-pipeline">Neurosciences Pipeline</p>
+                  </article>
+                  <article class="arch-strategy-item">
+                    <h6 class="arch-strategy-label">Strategy</h6>
+                    <p class="arch-strategy-value" id="arch-strategy-method">Chunk-level scoring</p>
+                  </article>
+                  <article class="arch-strategy-item arch-strategy-item-wide">
+                    <h6 class="arch-strategy-label">What it does</h6>
+                    <p class="arch-strategy-value" id="arch-strategy-what">Scores retrieved evidence chunks and prioritizes high-confidence context.</p>
+                  </article>
+                  <article class="arch-strategy-item arch-strategy-item-wide">
+                    <h6 class="arch-strategy-label">Why hallucination reduces</h6>
+                    <p class="arch-strategy-value" id="arch-strategy-why">Answer generation is constrained by clinically grounded, high-relevance evidence.</p>
+                  </article>
+                </div>
+              </section>
+
+            </div>
+          </article>
+
+         
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/layout.js" defer></script>
+  <script src="assets/js/home.js" defer></script>
+</body>
+</html>

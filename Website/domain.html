@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediRAG - Domain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg" />
+</head>
+<body data-page="domain">
+  <div id="site-header"></div>
+
+  <main class="page-main">
+    <section class="container page-hero">
+      <h1>Research Domain and Foundations</h1>
+      <p>
+        Explore the knowledge domain of MediRAG through the literature base, identified research gap, and the methodological direction for reliable medical question answering.
+      </p>
+    </section>
+
+    <section class="container domain-quick-nav" aria-label="Jump to sections">
+      <a class="domain-chip" href="#literature-survey">Literature</a>
+      <a class="domain-chip" href="#research-gap">Research Gap</a>
+      <a class="domain-chip" href="#research-problem">Problem</a>
+      <a class="domain-chip" href="#research-objectives">Objectives</a>
+      <a class="domain-chip" href="#methodology">Methodology</a>
+      <a class="domain-chip" href="#technologies-used">Technologies</a>
+      <a class="domain-chip" href="#domain-coverage">Coverage</a>
+    </section>
+
+    <section class="container content-list">
+     <article class="content-item" id="literature-survey">
+        <h2>Literature Survey</h2>
+
+        <p class="section-lead">
+          Modern medical LLMs perform well, but hallucinations still make raw model outputs unsafe for clinical use.
+        </p>
+
+        <ul class="key-points">
+          <li>LLMs already support clinical QA, exam reasoning, and documentation tasks.</li>
+          <li>RAG improves factual grounding by adding retrieved evidence context.</li>
+          <li>Most existing work improves retrieval more than generation safety control.</li>
+        </ul>
+
+        <div class="content-more">
+          <p class="content-more-title">Full Discussion</p>
+          <p>
+            Recent advancements in Large Language Models (LLMs) such as GPT, LLaMA, and domain-specific models have demonstrated strong capabilities in medical question answering, clinical reasoning, and knowledge retrieval. These models have been successfully applied to tasks including medical examinations, diagnosis support, and clinical documentation.
+          </p>
+          <p>
+            However, a major limitation of LLMs is their tendency to generate hallucinations - responses that are fluent but factually incorrect. This poses serious risks in healthcare, where incorrect information can lead to unsafe outcomes.
+          </p>
+          <p>
+            To address this, Retrieval-Augmented Generation (RAG) was introduced, combining external knowledge retrieval with LLM-based generation to improve factual grounding. While RAG improves reliability, existing systems still face key challenges:
+          </p>
+          <ul>
+            <li>Lack of consideration for evidence quality and clinical authority</li>
+            <li>Weak alignment between retrieval and generation</li>
+            <li>Use of static prompting, regardless of evidence strength</li>
+          </ul>
+          <p>
+            Recent approaches such as Self-RAG, Corrective RAG, and HyDE have attempted to improve retrieval quality. However, most solutions remain retrieval-focused and do not sufficiently address generation-side hallucination control, which is critical in medical applications.
+          </p>
+        </div>
+
+   </article>
+
+      <article class="content-item" id="research-gap">
+        <h2>Research Gap</h2>
+
+        <p class="section-lead">
+          Existing medical RAG systems are often single-pipeline and not strong enough in domain-aware safety.
+        </p>
+
+        <ul class="key-points">
+          <li>Limited generation control after retrieval.</li>
+          <li>No strong domain-specialized pipeline separation.</li>
+          <li>Weak verification and domain boundary enforcement.</li>
+          <li>Insufficient evidence-quality and authority modeling.</li>
+        </ul>
+
+        <div class="content-more">
+          <p class="content-more-title">Full Discussion</p>
+          <p>
+            Despite significant advancements in Large Language Models and Retrieval-Augmented Generation (RAG) systems, several critical limitations remain in their application to medical question answering. Most existing systems treat medical QA as a single-pipeline task, without adapting retrieval and reasoning strategies to the unique characteristics of different clinical domains.
+          </p>
+          <p>
+            As a result, current approaches fail to adequately address key challenges related to reliability, safety, and domain-specific reasoning in high-stakes healthcare environments. The following gaps are identified:
+          </p>
+          <ul>
+            <li>Limited focus on generation control, with most systems emphasizing retrieval improvements</li>
+            <li>Lack of domain-specific pipeline architectures for different medical specialties</li>
+            <li>Absence of integrated post-generation verification mechanisms</li>
+            <li>Weak or missing domain boundary enforcement (domain gating)</li>
+            <li>Insufficient consideration of evidence quality and clinical authority</li>
+          </ul>
+          <p>
+            These limitations result in insufficient hallucination control and poor answer traceability, making existing systems unreliable for real-world medical applications. This research addresses these gaps by introducing a multi-domain, evidence-aware RAG architecture with adaptive generation control.
+          </p>
+        </div>
+
+    </article>
+
+        <article class="content-item" id="research-problem">
+          <h2>Research Problem</h2>
+
+          <p class="section-lead">
+            How can we generate clinically reliable answers across domains without producing confident false statements?
+          </p>
+
+          <ul class="key-points">
+            <li>Preserve factual accuracy while keeping explanations readable.</li>
+            <li>Reduce hallucinations without over-limiting model expressiveness.</li>
+            <li>Adapt generation by evidence quality and confidence.</li>
+            <li>Keep behavior safe and consistent across specialties.</li>
+          </ul>
+
+          <div class="content-more">
+            <p class="content-more-title">Full Discussion</p>
+            <p>
+              The central research problem addressed in this study is the challenge of generating clinically reliable and meaningful answers using Large Language Models, while minimizing the risk of confident but factually incorrect responses (hallucinations).
+            </p>
+            <p>
+              Although generative models are capable of producing fluent and contextually relevant outputs, they often lack mechanisms to ensure factual accuracy, especially in high-stakes medical contexts where incorrect information can lead to serious consequences.
+            </p>
+            <p>
+              This challenge becomes more complex when handling diverse medical queries across multiple domains, each requiring different levels of precision, reasoning, and evidence interpretation.
+            </p>
+            <ul>
+              <li>Ensuring factual accuracy while maintaining natural and coherent responses</li>
+              <li>Reducing hallucinations without over-restricting the model's ability to generate explanations</li>
+              <li>Adapting response generation based on the quality and reliability of retrieved evidence</li>
+              <li>Maintaining consistency and safety across multiple medical domains</li>
+            </ul>
+            <p>
+              Therefore, the core problem is to design a system that can balance precision, reliability, and explanatory quality, while effectively controlling hallucinations in multi-domain medical question answering.
+            </p>
+          </div>
+
+      </article>
+
+        <article class="content-item" id="research-objectives">
+          <h2>Research Objectives</h2>
+
+          <p class="section-lead">
+            Build a domain-specialized RAG framework that is safer, more transparent, and more reliable for medical QA.
+          </p>
+
+          <ul class="key-points">
+            <li>Design dedicated pipelines for different medical specialties.</li>
+            <li>Improve factual consistency and hallucination resistance.</li>
+            <li>Adapt generation behavior using evidence quality signals.</li>
+            <li>Strengthen answer traceability to supporting evidence.</li>
+            <li>Integrate verification mechanisms for safer final responses.</li>
+            <li>Maintain academic explainability and practical extensibility.</li>
+          </ul>
+
+       </article>
+      <article class="content-item" id="methodology">
+            <h2>Methodology</h2>
+
+            <p class="section-lead">
+              MediRAG routes each query through a domain-aware pipeline, retrieves grounded evidence, and applies hallucination-control logic before response generation.
+            </p>
+
+            <figure class="system-figure">
+              <img src="assets/images/methodology.png" alt="MediRAG methodology workflow diagram" loading="lazy" decoding="async" />
+            </figure>
+
+            <ul class="key-points">
+              <li>Domain routing selects the most relevant clinical pipeline.</li>
+              <li>FAISS-based retrieval returns high-relevance medical evidence.</li>
+              <li>Each pipeline applies a domain-specific hallucination reduction strategy.</li>
+              <li>Final answers include evidence-backed and verification-aware outputs.</li>
+            </ul>
+
+            <div class="content-more">
+              <p class="content-more-title">Full Discussion</p>
+              <p>
+                Initially, the user query is analyzed by a domain classification module, which identifies the most relevant medical domain and routes the query to the corresponding specialized pipeline.
+              </p>
+              <ul>
+                <li>NeuroRAG - Neuroscience pipeline</li>
+                <li>CardioRAG - Cardiology pipeline</li>
+                <li>SafeRAG - Internal Medicine pipeline</li>
+                <li>CuraRAG - Primary Care & Mental Health pipeline</li>
+              </ul>
+              <p>
+                Within each pipeline, the query is processed through a domain-specific knowledge base indexed using FAISS. Relevant medical evidence is retrieved using semantic similarity techniques, ensuring that the response is grounded in domain-relevant information.
+              </p>
+              <p>
+                Each pipeline incorporates a specialized mechanism to reduce hallucinations and improve response quality:
+              </p>
+              <ul>
+                <li>NeuroRAG applies human-reasoning-inspired multi-stage retrieval scoring</li>
+                <li>CardioRAG utilizes hybrid embedding techniques and HyDE-based retrieval enhancement</li>
+                <li>SafeRAG performs multi-stage post-generation verification using NLI and LLM-based evaluation</li>
+                <li>CuraRAG implements adaptive generation control based on evidence quality using an Instructor LLM</li>
+              </ul>
+              <p>
+                The retrieved evidence is then passed to a Large Language Model, which generates a response conditioned on the provided context. The system ensures that outputs are not only relevant but also supported by verifiable evidence.
+              </p>
+              <p>
+                Finally, the system returns a structured response that includes the generated answer, supporting evidence, and additional indicators such as confidence level or verification status, enhancing transparency and trustworthiness.
+              </p>
+            </div>
+
+      </article>
+
+      <article class="content-item" id="technologies-used">
+        <h2>Technologies Used</h2>
+        <div class="tech-grid" aria-label="Technology stack">
+          <article class="tech-card">
+            <img src="assets/images/python.webp" alt="Python" class="tech-icon" />
+            <h3>Python</h3>
+            <p>Core implementation language for the backend, retrieval pipeline, and model orchestration.</p>
+          </article>
+          <article class="tech-card">
+            <img src="assets/images/fastapi.png" alt="FastAPI" class="tech-icon" />
+            <h3>FastAPI</h3>
+            <p>API layer used to expose the retrieval and inference services through lightweight endpoints.</p>
+          </article>
+          <article class="tech-card">
+            <img src="assets/images/uvicorn.png" alt="Uvicorn" class="tech-icon" />
+            <h3>Uvicorn</h3>
+            <p>ASGI server used to run the FastAPI application efficiently in development and deployment.</p>
+          </article>
+          <article class="tech-card">
+            <img src="assets/images/nextjs.webp" alt="Next.js" class="tech-icon" />
+            <h3>Next.js</h3>
+            <p>Frontend framework used for building the web interface with a clean and responsive academic layout.</p>
+          </article>
+          <article class="tech-card">
+            <img src="assets/images/faiss.webp" alt="FAISS" class="tech-icon" />
+            <h3>FAISS</h3>
+            <p>Vector indexing and similarity search engine for efficient retrieval over medical knowledge embeddings.</p>
+
+          </article>
+          <article class="tech-card">
+            <img src="assets/images/sentence%20transformers.png" alt="Sentence Transformers" class="tech-icon" />
+            <h3>Sentence Transformers</h3>
+            <p>Used to generate semantic embeddings for queries and retrieved medical content.</p>
+          </article>
+          <article class="tech-card">
+            <img src="assets/images/pytorch.jpg" alt="PyTorch" class="tech-icon" />
+            <h3>PyTorch</h3>
+            <p>Deep learning runtime used for model execution, experimentation, and research prototyping.</p>
+          </article>
+        </div>
+      </article>
+
+        <article class="content-item" id="domain-coverage">
+          <h2>Research Domain Coverage</h2>
+
+          <p class="section-lead">
+            MediRAG covers four high-impact clinical areas to balance specialty depth with broad practical utility.
+          </p>
+
+          <ul class="key-points">
+            <li>Neurosciences: neurological disorders and neurosurgical context.</li>
+            <li>Cardiovascular Medicine: heart-related diagnosis and treatment reasoning.</li>
+            <li>Internal Medicine: complex general medicine and interaction-heavy queries.</li>
+            <li>Primary Care & Mental Health: interdisciplinary, patient-centered scenarios.</li>
+          </ul>
+
+          <p>
+            Each domain runs on a dedicated RAG pipeline, enabling domain-specific retrieval and reasoning while keeping overall system coverage broad and clinically useful.
+          </p>
+
+      </article>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="assets/js/layout.js" defer></script>
+</body>
+</html>
+
