@@ -1,10 +1,26 @@
+<script>
+  const navToggle = document.getElementById("nav-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  navToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+
+
+
 <header class="navbar">
   <div class="container nav-inner">
     <div class="nav-brand">
       <img src="assets/images/logo.svg" alt="MediRAG logo" class="nav-logo" />
       <span class="nav-brand-name">MediRAG</span>
     </div>
-    <nav class="nav-links">
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open navigation menu">
+      ☰
+    </button>
+
+    <nav class="nav-links" id="nav-links">
       <a class="nav-link" href="Home.html" data-nav="home">Home</a>
       <a class="nav-link" href="domain.html" data-nav="domain">Domain</a>
       <a class="nav-link" href="milestones.html" data-nav="milestones">Milestones</a>
