@@ -2127,4 +2127,118 @@ footer {
   }
 }
 
+/* ===== Achievement Section ===== */
 
+.achievement-section {
+  margin: 34px auto;
+}
+
+.achievement-section .docs-head {
+  margin-bottom: 18px;
+  margin-left: 95px;
+}
+
+.achievement-card {
+  max-width: 960px;
+  margin: 0 auto;
+  border: 1px solid #fed7aa;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%);
+  box-shadow: 0 14px 32px rgba(249, 115, 22, 0.1);
+  padding: 26px;
+  transition: all 0.25s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-2px);
+}
+
+.achievement-top {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 16px;
+}
+
+.achievement-logo {
+  width: 125px;
+  height: 125px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #fed7aa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  box-shadow: 0 12px 24px rgba(249, 115, 22, 0.15);
+  flex: 0 0 auto;
+}
+
+.achievement-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.achievement-label {
+  display: inline-flex;
+  margin-bottom: 6px;
+  color: #9a3412;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.achievement-card h3 {
+  font-size: 1.55rem;
+  color: #111827;
+  line-height: 1.25;
+}
+
+.achievement-card p {
+  color: #374151;
+  line-height: 1.75;
+  margin-top: 10px;
+}
+
+.achievement-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.achievement-points span {
+  border: 1px solid #fed7aa;
+  background: #fff;
+  color: #92400e;
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+ 
+  .achievement-card {
+    padding: 18px;
+  }
+
+  .achievement-top {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .achievement-logo {
+    width: 82px;
+    height: 82px;
+    border-radius: 16px;
+    padding: 8px;
+  }
+
+  .achievement-card h3 {
+    font-size: 1.25rem;
+  }
+}
