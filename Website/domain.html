@@ -32,7 +32,7 @@
     </section>
 
     <section class="container content-list">
-     <article class="content-item" id="literature-survey">
+    <article class="content-item" id="literature-survey">
         <h2>Literature Survey</h2>
 
         <p class="section-lead">
@@ -54,7 +54,7 @@
             However, a major limitation of LLMs is their tendency to generate hallucinations - responses that are fluent but factually incorrect. This poses serious risks in healthcare, where incorrect information can lead to unsafe outcomes.
           </p>
           <p>
-            To address this, Retrieval-Augmented Generation (RAG) was introduced, combining external knowledge retrieval with LLM-based generation to improve factual grounding. While RAG improves reliability, existing systems still face key challenges:
+            To address this, Retrieval-Augmented Generation (RAG) [1] was introduced, combining external knowledge retrieval with LLM-based generation to improve factual grounding. While RAG improves reliability, existing systems still face key challenges:
           </p>
           <ul>
             <li>Lack of consideration for evidence quality and clinical authority</li>
@@ -62,11 +62,29 @@
             <li>Use of static prompting, regardless of evidence strength</li>
           </ul>
           <p>
-            Recent approaches such as Self-RAG, Corrective RAG, and HyDE have attempted to improve retrieval quality. However, most solutions remain retrieval-focused and do not sufficiently address generation-side hallucination control, which is critical in medical applications.
+            Recent approaches such as Self-RAG [2], Corrective RAG [3], and HyDE [4] have attempted to improve retrieval quality. However, most solutions remain retrieval-focused and do not sufficiently address generation-side hallucination control, which is critical in medical applications.
           </p>
         </div>
 
-   </article>
+        <!-- Added IEEE References Section -->
+        <div class="references-section">
+          <h3>References</h3>
+          <ol style="list-style-type: none; padding-left: 0;">
+            <li style="margin-bottom: 10px;">
+              [1] P. Lewis <em>et al.</em>, "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks," in <em>Adv. Neural Inf. Process. Syst. (NeurIPS)</em>, vol. 33, 2020, pp. 9459–9474.
+            </li>
+            <li style="margin-bottom: 10px;">
+              [2] A. Asai <em>et al.</em>, "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection," in <em>Proc. Int. Conf. Learn. Represent. (ICLR)</em>, Vienna, Austria, 2024.
+            </li>
+            <li style="margin-bottom: 10px;">
+              [3] S.-Q. Yan, J.-C. Gu, Y. Zhu, and Z.-H. Ling, "Corrective Retrieval Augmented Generation," <em>arXiv preprint arXiv:2401.15884</em>, 2024.
+            </li>
+            <li>
+              [4] L. Gao, X. Ma, J. Lin, and J. Callan, "Precise Zero-Shot Dense Retrieval without Relevance Labels," in <em>Proc. 61st Annu. Meet. Assoc. Comput. Linguistics (ACL)</em>, Toronto, ON, Canada, 2023, pp. 1762–1777.
+            </li>
+          </ol>
+        </div>
+</article>
 
       <article class="content-item" id="research-gap">
         <h2>Research Gap</h2>
